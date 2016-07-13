@@ -310,4 +310,3 @@ except ImportError:
 WEBROOT='/horizon/'
 ALLOWED_HOSTS = '*'
 COMPRESS_OFFLINE = True
-
