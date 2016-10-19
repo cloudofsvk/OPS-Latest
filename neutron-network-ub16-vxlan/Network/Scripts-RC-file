@@ -1,0 +1,31 @@
+# cat /root/adminrc
+export OS_PROJECT_DOMAIN_NAME=default
+export OS_USER_DOMAIN_NAME=default
+export OS_PROJECT_NAME=admin
+export OS_TENANT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=0penstack
+export OS_AUTH_URL=http://controller:35357/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_IMAGE_API_VERSION=2
+export OS_VOLUME_API_VERSION=2
+#
+
+# cat /root/opser.sh
+for i in neutron-{linuxbridge-agent,l3-agent,dhcp-agent,metadata-agent}
+do
+systemctl $1 $i
+done
+#
+
+
+# cat /root/cleanlog.sh
+for i in $(ls /var/log/neutron/*.log)
+do
+>$i
+done
+#
+
+# uname -r
+4.4.0-22-generic
+#
